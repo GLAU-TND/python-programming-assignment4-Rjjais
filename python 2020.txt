@@ -1,0 +1,67 @@
+#Ques1
+q=eval(input())
+w=int(input())
+n=[]
+for i in q:
+  if i[0] not in n:
+    n.append(i[0])
+dct={}
+for i in n:
+  dct[i]=[] 
+for i in dct:
+  for j in q:
+    if i==j[0]:
+      dct[i].append(j[q])
+dct2={}
+r=0
+for i in range(len(dct)):
+  for j in range(i+1,len(dct)):
+    res=len(set(dct[list(dct)[i]]) & set(dct[list(dct)[j]]))/float(len(set(dct[list(dct)(i)]) | set(dct[list(dct)[j]])))*100
+    if 1!=j:
+      dct2[r]=[round(res,2),list(dct)[j],list(dct)[i]]
+      r=r+1
+a=list(dct2.values())
+for k in range(len(a)):
+  if a[k][1]>a[k][2]:
+    c=a[k][1]
+    a[k][1]=a[k][2]
+    a[k][2]=c
+
+a.sort(key = lambda a: a[0],reverse=True)
+l=[]
+for q in range(n):
+  q+=[(a[q][1],a[q][2])]
+print(l)
+
+
+
+
+
+#Ques2
+
+c=eval(input())
+def n(a):
+  try:
+    for k in a:
+      if type(a[k])==type({}):
+        for i in a[k]:
+          a[k+i]=a[k][i]
+        a.pop(k)
+        n(a)
+    else:
+      print(a)
+  except RuntimeError:
+    pass
+n(c)
+
+
+
+#Ques3
+
+s=input()
+str=eval(input())
+d=set()
+for k in str:
+  if s==k[0:len(s)]:
+    d.add(k)
+print(d)
